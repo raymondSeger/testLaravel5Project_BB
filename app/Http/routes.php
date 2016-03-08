@@ -137,6 +137,17 @@ Route::get('testEncryption', [function () {
  	echo "My string is: $decrypted_string";
 }]);
 
+// test logging
+Route::get('testLogging', [function () {
+    Log::emergency("emergency");
+	Log::alert("alert");
+	Log::critical("critical");
+	Log::error("error");
+	Log::warning("warning");
+	Log::notice("notice");
+	Log::info("info");
+	Log::debug("deubg");
+}]);
 
 
 /*
