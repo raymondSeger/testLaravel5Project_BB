@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use DebugBar\StandardDebugBar;
 
 /*
 |--------------------------------------------------------------------------
@@ -260,6 +261,20 @@ Route::get('testDBGettingStarted', [function () {
 	// Basically Query builder here is the same with the one in CodeIgniter. CRUD, GET RESULT, JOINS, ORDER / GROUP / LIMIT / OFFSET
 
 }]);
+
+// test debug bar
+// http://packalyst.com/packages/package/barryvdh/laravel-debugbar
+Route::get('testDebugBar', [function () {
+    
+    Debugbar::info("info");
+	Debugbar::error('Error!');
+	Debugbar::warning('Watch out…');
+	Debugbar::addMessage('Another message', 'mylabel');
+
+	echo "a";
+
+}]);
+
 
 
 /*
