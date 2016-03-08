@@ -9,6 +9,7 @@ use App\Http\Requests;
 class BillyController extends Controller
 {
 
+    // points to the route that is profile that is grouped by "admin::"
     public function showIndex() {
         echo route('admin::profile');
     }
