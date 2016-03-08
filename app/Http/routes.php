@@ -238,6 +238,23 @@ Route::get('testDBGettingStarted', [function () {
 	    $all_foods = DB::table('foods')->get();
 
 	    print_r($all_foods);
+
+	    $data_foods = DB::table('foods')->select('name', 'rating as user_rating')->get();
+
+	    print_r($data_foods);
+
+
+	    // example of join
+	    // take users table, join with foods table. Connect foods_id in Users table with id in foods table
+	    // get all the data in users and foods
+	    $users = DB::table('users')
+            ->join('foods', 'users.foods_id', '=', 'foods.id')
+            ->select('users.*', 'foods.*')
+            ->get();
+
+        print_r($users);
+
+
 	});
 
 }]);
