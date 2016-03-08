@@ -275,6 +275,11 @@ Route::get('testDebugBar', [function () {
 
 }]);
 
+// test middleware group
+Route::get('testCORS', ['middleware' => 'cors', function () {
+    echo "i am the content of this route, CORS middleware";
+}]);
+
 
 
 /*
