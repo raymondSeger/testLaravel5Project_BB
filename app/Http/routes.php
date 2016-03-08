@@ -57,6 +57,12 @@ Route::get('testMiddleware', ['middleware' => 'myCustomMiddleware1', function ()
     echo "i am the content of this route";
 }]);
 
+
+// test middleware group
+Route::get('testMiddlewareGroup', ['middleware' => 'myCustomMiddlewareGroup', function () {
+    echo "i am the content of this route";
+}]);
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes

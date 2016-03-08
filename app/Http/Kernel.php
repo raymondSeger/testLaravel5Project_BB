@@ -34,6 +34,12 @@ class Kernel extends HttpKernel
         'api' => [
             'throttle:60,1',
         ],
+
+        'myCustomMiddlewareGroup' => [
+           \App\Http\Middleware\MyCustomMiddleWare1::class,
+           \App\Http\Middleware\MyCustomMiddleWare2::class,
+        ],
+
     ];
 
     /**
@@ -48,6 +54,7 @@ class Kernel extends HttpKernel
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
-        'myCustomMiddleware1' => \App\Http\Middleware\MyCustomMiddleWare1::class
+        'myCustomMiddleware1' => \App\Http\Middleware\MyCustomMiddleWare1::class,
+        'MyCustomMiddleWare2' => \App\Http\Middleware\MyCustomMiddleWare2::class
     ];
 }
