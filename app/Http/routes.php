@@ -52,6 +52,10 @@ Route::group(['prefix' => 'marketing', 'as' => 'marketing::'], function () {
 
 });
 
+/***************
+* Basically middleware is similar with NodeJS middleware, the code is ran to tamper the datas in POST, GET, and our application before going to the controller
+*/
+
 // test middleware
 Route::get('testMiddleware', ['middleware' => 'myCustomMiddleware1', function () {
     echo "i am the content of this route";
