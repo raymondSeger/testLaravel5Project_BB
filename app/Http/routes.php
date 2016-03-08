@@ -67,6 +67,9 @@ Route::get('testMiddlewareGroup', ['middleware' => 'myCustomMiddlewareGroup', fu
     echo "i am the content of this route";
 }]);
 
+// test middleware through controller's constructor
+Route::get('testMiddlewareThroughController', ['uses' => 'BillyController@testMiddleware', 'as' => 'testMiddleware']);
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes

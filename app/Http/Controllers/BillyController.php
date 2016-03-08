@@ -9,6 +9,20 @@ use App\Http\Requests;
 class BillyController extends Controller
 {
 
+    public function __construct() {
+
+
+        // you can use except and only  to apply the middleware only for a specific methods.
+        // https://laravel.com/docs/5.2/controllers#controller-middleware
+        $this->middleware('myCustomMiddlewareGroup');
+
+        
+    }
+
+    public function testMiddleware() {
+        echo "i am the content for testMiddleware";
+    }
+
     // points to the route that is profile that is grouped by "admin::"
     public function showIndex() {
         echo route('admin::profile');
