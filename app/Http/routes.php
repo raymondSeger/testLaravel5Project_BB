@@ -149,6 +149,18 @@ Route::get('testLogging', [function () {
 	Log::debug("deubg");
 }]);
 
+// test session
+Route::get('testSession', ['middleware' => 'webWithoutCSRF', function (Request $request) {
+
+   	if ($request->session()->has('my_name')) {
+    	echo "Your session data: your name is {$request->session()->get('my_name')}";
+	} else {
+		$request->session()->put('my_name', 'Raymond Seger');
+    	echo "now you have session data";
+	}
+
+}]);
+
 
 /*
 |--------------------------------------------------------------------------
