@@ -206,6 +206,30 @@ Route::get('testFilesystem', [function () {
 	// https://laravel.com/docs/5.2/filesystem
 }]);
 
+// test helpers
+// https://laravel.com/docs/5.2/helpers
+Route::get('testHelpers', [function () {
+
+	echo app_path();
+	echo "<br />";
+	echo base_path();
+	echo "<br />";
+	echo config_path();
+	echo "<br />";
+	echo database_path();
+	echo "<br />";
+	echo public_path();
+	echo "<br />";
+	echo storage_path();
+
+	echo "<br />";
+	echo action('BillyController@testMiddleware');
+	echo "<br />";
+	echo asset('assets/app.css');
+	echo "<br />";
+	echo route('testMiddleware');
+}]);
+
 
 /*
 |--------------------------------------------------------------------------
