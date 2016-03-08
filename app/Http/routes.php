@@ -19,6 +19,7 @@ Route::get('foo', function () {
     return 'Hello World';
 });
 
+// one param
 Route::get('user/{id}', function ($id2) {
     return 'User '.$id2;
 });
@@ -27,6 +28,7 @@ Route::get('name/{post}/age/{comment}', function ($postId, $commentId) {
     echo "$postId - $commentId";
 });
 
+// optional param
 Route::get('name/{name?}', function ($name = 'John') {
     return $name;
 });
@@ -51,6 +53,7 @@ Route::group(['as' => 'admin::'], function () {
 |
 */
 
+// CSRF automatic protection, session state automatic handler
 Route::group(['middleware' => ['web']], function () {
     //
 });
