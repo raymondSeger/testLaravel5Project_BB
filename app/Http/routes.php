@@ -161,6 +161,23 @@ Route::get('testSession', ['middleware' => 'webWithoutCSRF', function (Request $
 
 }]);
 
+// test hashing
+Route::get('testHashing', [function () {
+    $my_hashed_password = Hash::make("OyVey");
+
+    // in case the has needs to be rehashed
+    if (Hash::needsRehash($my_hashed_password)) {
+	    $my_hashed_password = Hash::make('OyVey');
+	}
+
+	if (Hash::check('OyVey', $my_hashed_password)) {
+	    echo "your password is OyVey";
+	} else {
+		echo "go away heathen";
+	}
+
+}]);
+
 
 /*
 |--------------------------------------------------------------------------
