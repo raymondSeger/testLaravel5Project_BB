@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Http\Request;
+
 /*
 |--------------------------------------------------------------------------
 | Routes File
@@ -69,6 +71,28 @@ Route::get('testMiddlewareGroup', ['middleware' => 'myCustomMiddlewareGroup', fu
 
 // test middleware through controller's constructor
 Route::get('testMiddlewareThroughController', ['uses' => 'BillyController@testMiddleware', 'as' => 'testMiddleware']);
+
+// test sending form data
+Route::get('testSendingFormData', [function () {
+   	return view('billy_test_sending_form');
+}]);
+Route::post('testProcessFormData', [function (Request $request) {
+   	echo "My path: {$request->path()}";
+   	echo "<br />";
+   	echo "My URL: {$request->url()}";
+   	echo "<br />";
+   	echo "My URL with query string: {$request->fullUrl()}";
+	echo "<br />";
+   	echo "My URL method: {$request->method()}";
+
+   	echo "<br />";
+   	$name = $request->input('name');
+   	$age  = $request->input('age');
+   	echo "Name: {$name} , age: {$age}";
+
+   	// You can also get the cookie or set flash data (data is put to session, and it will be deleted after it has been shown in the next page);
+   	// https://laravel.com/docs/5.2/requests
+}]);
 
 /*
 |--------------------------------------------------------------------------

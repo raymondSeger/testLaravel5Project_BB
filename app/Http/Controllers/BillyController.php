@@ -15,8 +15,6 @@ class BillyController extends Controller
         // you can use except and only  to apply the middleware only for a specific methods.
         // https://laravel.com/docs/5.2/controllers#controller-middleware
         $this->middleware('myCustomMiddlewareGroup');
-
-        
     }
 
     public function testMiddleware() {
