@@ -42,12 +42,14 @@ Route::group(['as' => 'admin::'], function () {
 
 });
 
-Route::group(['prefix' => 'marketing'], function () {
+Route::group(['prefix' => 'marketing', 'as' => 'marketing::'], function () {
 
-    Route::get('users', function ()    {
+    Route::get('users', ['as' => 'profile', function ()    {
         echo "I am in marketing/users";
-    });
-    
+        echo "<br />";
+        echo  Route::current()->getName(); // marketing::profile
+    }]);
+
 });
 
 /*
