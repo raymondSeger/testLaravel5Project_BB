@@ -52,6 +52,11 @@ Route::group(['prefix' => 'marketing', 'as' => 'marketing::'], function () {
 
 });
 
+// test middleware
+Route::get('testMiddleware', ['middleware' => 'myCustomMiddleware1', function () {
+    echo "i am the content of this route";
+}]);
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes

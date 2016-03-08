@@ -16,6 +16,8 @@ class MyCustomMiddleWare1
      */
     public function handle($request, Closure $next)
     {
+        echo "i am the middleware function"; 
+        echo "<br />";
         return $next($request);
     }
 }
