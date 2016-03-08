@@ -230,6 +230,18 @@ Route::get('testHelpers', [function () {
 	echo route('testMiddleware');
 }]);
 
+// test DB Getting Started
+Route::get('testDBGettingStarted', [function () {
+
+	// no need to handle commit or rollback if it fails
+	DB::transaction(function () {
+	    $all_foods = DB::table('foods')->get();
+
+	    print_r($all_foods);
+	});
+
+}]);
+
 
 /*
 |--------------------------------------------------------------------------
