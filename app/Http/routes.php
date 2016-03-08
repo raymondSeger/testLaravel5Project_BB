@@ -178,6 +178,20 @@ Route::get('testHashing', [function () {
 
 }]);
 
+// test middleware group
+Route::get('testLocalization', [function () {
+	App::setLocale("es");
+    echo trans('messages.welcome');
+
+    echo "<br />";
+
+    echo trans('messages.welcomeWithParam', ['name' => 'Raymond Seger']);
+
+    echo "<br />";
+    
+    echo trans_choice('messages.apples', 10);
+}]);
+
 
 /*
 |--------------------------------------------------------------------------
