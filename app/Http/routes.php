@@ -257,6 +257,8 @@ Route::get('testDBGettingStarted', [function () {
 
 	});
 
+	// Basically Query builder here is the same with the one in CodeIgniter. CRUD, GET RESULT, JOINS, ORDER / GROUP / LIMIT / OFFSET
+
 }]);
 
 
