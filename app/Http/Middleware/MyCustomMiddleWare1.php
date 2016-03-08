@@ -20,4 +20,10 @@ class MyCustomMiddleWare1
         echo "<br />";
         return $next($request);
     }
+
+    // This is ran after the HTTP response has already been sent to the browser
+    public function terminate($request, $response)
+    {
+        
+    }
 }
