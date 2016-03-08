@@ -42,6 +42,14 @@ Route::group(['as' => 'admin::'], function () {
 
 });
 
+Route::group(['prefix' => 'marketing'], function () {
+
+    Route::get('users', function ()    {
+        echo "I am in marketing/users";
+    });
+    
+});
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
