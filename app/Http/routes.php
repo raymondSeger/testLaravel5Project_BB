@@ -192,6 +192,20 @@ Route::get('testLocalization', [function () {
     echo trans_choice('messages.apples', 10);
 }]);
 
+// test filesystem
+Route::get('testFilesystem', [function () {
+	Storage::disk('local')->put('file.txt', 'Contents');
+
+	$contents = Storage::get('file.txt');
+	$size = Storage::size('file.txt');
+	$time = Storage::lastModified('file.txt');
+
+	echo "Content is {$contents} , size is: {$size}, last modified time is: {$time}";
+
+	// You can also CRUD file CRUD directories, connect with AWS / Rackspace
+	// https://laravel.com/docs/5.2/filesystem
+}]);
+
 
 /*
 |--------------------------------------------------------------------------
