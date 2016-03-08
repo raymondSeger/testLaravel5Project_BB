@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 /*
 |--------------------------------------------------------------------------
@@ -92,6 +93,18 @@ Route::post('testProcessFormData', [function (Request $request) {
 
    	// You can also get the cookie or set flash data (data is put to session, and it will be deleted after it has been shown in the next page);
    	// https://laravel.com/docs/5.2/requests
+}]);
+
+// test Responses
+Route::get('testResponses', [function () {
+   	// Returning a full Response instance allows you to customize the response's HTTP status code and headers
+   	// You can send flashback data, cookie, json, file download, and redirect to controller&method or specific route / url.
+   	// https://laravel.com/docs/5.2/responses
+   	return response("I am the content")
+            ->withHeaders([
+                'X-Header-One' => 'Header Value',
+                'X-Header-Two' => 'Header Value',
+            ]);
 }]);
 
 /*
