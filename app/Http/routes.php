@@ -125,6 +125,20 @@ Route::get('testViewsAndBladeTemplate', [function () {
 
 }]);
 
+
+// test encryption 
+Route::get('testEncryption', [function () {
+    $encrypted_string = Crypt::encrypt("My name is Raymond Seger");
+
+    $decrypted_string = Crypt::decrypt($encrypted_string);
+
+    echo "My encryped string is: $encrypted_string";
+    echo "<br />";
+ 	echo "My string is: $decrypted_string";
+}]);
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
