@@ -112,9 +112,13 @@ Route::get('testResponses', [function () {
 // and
 // https://laravel.com/docs/5.2/blade
 Route::get('testViewsAndBladeTemplate', [function () {
-	
+
 	if (view()->exists('testTemplate.specificPage')) {
-    	return view('testTemplate/specificPage', ['name' => 'Raymond Seger', 'age' => 26]);
+    	return view('testTemplate/specificPage', [
+    		'title'=>"The title",
+    		 'name' => 'Raymond Seger', 
+    		 'age' => 26
+    		 ]);
 	} else {
 		echo "Oy vey!";
 	}
