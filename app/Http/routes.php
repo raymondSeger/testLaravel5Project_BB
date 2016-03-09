@@ -283,6 +283,19 @@ Route::get('testCORS', ['middleware' => 'cors', function () {
 
 
 
+
+// test API
+$api = app('Dingo\Api\Routing\Router');
+
+$api->version('v1', function ($api) {
+	$api->get('apiUsers/{id}', 'App\Http\Controllers\BillyController@apiUserShowId');
+});
+
+$api->version('v2', function ($api) {
+	$api->get('apiUsers/{id}', 'App\Http\Controllers\BillyController@apiUserShowId2');
+});
+
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes

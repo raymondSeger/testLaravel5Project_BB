@@ -17,6 +17,18 @@ class BillyController extends Controller
         $this->middleware('myCustomMiddlewareGroup');
     }
 
+    public function apiUserShowId() {
+        return "i am the content for API User Show ID";
+    }
+
+    public function apiUserShowId2() {
+        // i can call the api inside code
+        // https://github.com/dingo/api/wiki/Internal-Requests
+        $dispatcher = app('Dingo\Api\Dispatcher');
+
+        echo $dispatcher->version('v1')->get('api/apiUsers/4');
+    }
+
     public function testMiddleware() {
         echo "i am the content for testMiddleware";
     }
